@@ -40,7 +40,7 @@ $(function() {
       username: $('#form_reg [name=username]').val(),
       password: $('#form_reg [name=password]').val()
     }
-    $.post('/api/reguser', data, function(res) {
+    $.post('http://www.liulongbin.top:3007/api/reguser', data, function(res) {
       if (res.status !== 0) {
         return layer.msg(res.message)
       }
@@ -55,7 +55,7 @@ $(function() {
     // 阻止默认提交行为
     e.preventDefault()
     $.ajax({
-      url: '/api/login',
+      url: 'http://www.liulongbin.top:3007/api/login',
       method: 'POST',
       // 快速获取表单中的数据
       data: $(this).serialize(),
@@ -67,7 +67,7 @@ $(function() {
         // 将登录成功得到的 token 字符串，保存到 localStorage 中
         localStorage.setItem('token', res.token)
         // 跳转到后台主页
-        location.href = '/index.html'
+        location.href = 'E:/code/index.html'
       }
     })
   })
